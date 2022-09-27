@@ -1,8 +1,8 @@
-function Search(props){
+function Search({searchValue, setSearchValue}){
     return (
-        <div>
-            search
-        </div>
+        <>
+
+        </>
     )
 }
 
