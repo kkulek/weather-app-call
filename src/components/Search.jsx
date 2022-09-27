@@ -3,8 +3,13 @@ import {useRef} from "react";
 function Search({searchValue, setSearchValue}){
     const searchRef = useRef(null);
 
+    function handleBlur() {
+        if (searchValue === "") {
+            searchRef.current.classList.remove("focus");
+        }
+    }
 
-    function handleFocus(e) {
+    function handleFocus() {
         searchRef.current.classList.add("focus");
     }
 
@@ -18,6 +23,7 @@ function Search({searchValue, setSearchValue}){
             <input
                 onChange={handleInput}
                 onFocus={handleFocus}
+                onBlur={handleBlur}
                 className="search__input"
                 type="text"
                 value={searchValue}
