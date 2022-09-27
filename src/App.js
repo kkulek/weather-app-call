@@ -1,4 +1,4 @@
-import Autocomplete from "./components/Autocomplete";
+// import Autocomplete from "./components/Autocomplete";
 import SearchBar from "./components/SearchBar";
 import Weather from "./components/Weather";
 import WeatherForecastChart from "./components/WeatherForecastChart";
