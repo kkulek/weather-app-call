@@ -2,7 +2,7 @@ const API_KEY = 'ca98464ba7f04c9caae191016222709';
 const BASE_URL = 'http://api.weatherapi.com/v1/forecast.json';
 
 
-export async function getWeatherFromApi(city){
+export async function getWeatherFromApi(city) {
     const config = {
         key: API_KEY,
         q: city,
@@ -12,6 +12,9 @@ export async function getWeatherFromApi(city){
     }
 
     const response = await fetch(`${BASE_URL}?${new URLSearchParams(config)}`)
+        .catch((error) => {
+            console.log(error)
+        })
     return response.json();
 }
 

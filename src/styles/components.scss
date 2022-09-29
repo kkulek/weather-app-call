@@ -1,7 +1,28 @@
 @import './utils';
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  border-bottom: 1px solid gray;
+  //width: 100%;
+  box-sizing: border-box;
+
+  &__header {
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+  }
+}
+
 .search{
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &__lbl {
     color: rgba(255, 255, 255, 0.7);
     position: absolute;
@@ -17,19 +38,22 @@
     .search__lbl {
       font-size: rem(8px);
       top: rem(6px);
+      left: rem(5px);
     }
   }
 
   &__input {
+    width: 100%;
     padding: rem(9px);
     border-radius: rem(4px);
     border: rem(1px) solid rgba(255, 255, 255, 0.23);
     background: rgb(0, 30, 60);
-    margin: rem(10px);
+    margin: rem(10px) rem(10px) rem(10px) 0;
     color: rgba(255, 255, 255, 0.9);
   }
 
   &__btn {
+    cursor: pointer;
     background-color: #727a9e;
     border: none;
     color: black;
@@ -63,5 +87,6 @@
 
 .chart {
   width: 100%;
-
+  padding-left: rem(10px);
+  padding-right: rem(10px);
 }
