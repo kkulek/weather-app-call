@@ -1,42 +1,42 @@
 import {useRef} from "react";
 
-function Search({searchValue, setSearchValue, handleSearch}){
+function Search({searchValue, setSearchValue, handleSearch}) {
     const searchRef = useRef(null);
 
-    function handleBlur() {
-        if (searchValue === "") {
-            searchRef.current.classList.remove("focus");
-        }
+    function handleInput(e) {
+        setSearchValue(e.target.value);
     }
 
     function handleFocus() {
         searchRef.current.classList.add("focus");
     }
 
-    function handleInput(e) {
-        setSearchValue(e.target.value);
+    function handleBlur() {
+        if(searchValue === ""){
+            searchRef.current.classList.remove("focus");
+        }
     }
 
     return (
-        <div className="search"
-             ref={searchRef}
+        <div
+            className="search"
+            ref={searchRef}
         >
-            <input
-                onChange={handleInput}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                className="search__input"
-                type="text"
-                value={searchValue}
-                id="search"/>
-            <label htmlFor="search" className="search__lbl">
+            <label className="search__lbl" htmlFor="search">
                 Type city
             </label>
+            <input
+                className="search__input"
+                type="text"
+                onChange={handleInput}
+                value={searchValue}
+                id="search"
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+            />
             <button className="search__btn" onClick={handleSearch}>Search</button>
         </div>
-    )
+    );
 }
-
-
 
 export default Search;

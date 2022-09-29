@@ -1,20 +1,18 @@
 import {useState} from "react";
 
-// import Autocomplete from "./components/Autocomplete";
 import SearchBar from "./components/SearchBar";
 import Weather from "./components/Weather";
 import WeatherForecastChart from "./components/WeatherForecastChart";
 import {getWeatherFromApi} from "./utils/api";
+
 import './styles/main.scss';
-
-
 
 
 function App() {
     const [searchValue, setSearchValue] = useState('');
-    const [forecastData, setForecastData] = useState({})
+    const [forecastData, setForecastData] = useState({});
 
-    async function handleSearch() {
+    async function handleSearch(){
         const data = await getWeatherFromApi(searchValue);
         setForecastData(data);
         // setSearchValue("");
@@ -24,9 +22,9 @@ function App() {
         <main className="App">
             <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch}/>
             {!!Object.keys(forecastData).length && (
-                <Weather currentWeather={{...forecastData.current, ...forecastData.location}} />
+                <Weather currentWeather={{...forecastData.current, ...forecastData.location}}/>
             )}
-            <WeatherForecastChart />
+            <WeatherForecastChart/>
         </main>
     );
 }

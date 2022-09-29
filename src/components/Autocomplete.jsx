@@ -1,9 +1,9 @@
-function Autocomplete(props){
+function Autocomplete(props) {
     return (
         <div>
             autocomplete
         </div>
-    )
+    );
 }
 
 export default Autocomplete;
