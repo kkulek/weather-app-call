@@ -1,11 +1,12 @@
-const API_KEY = '1f6388158cf04dfeafd191014222709';
+const API_KEY = 'ca98464ba7f04c9caae191016222709';
 const BASE_URL = 'http://api.weatherapi.com/v1/forecast.json';
+
 
 export async function getWeatherFromApi(city){
     const config = {
         key: API_KEY,
         q: city,
-        days: 10,
+        days: 7,
         aqi: "no",
         alerts: "no"
     }
@@ -14,3 +15,4 @@ export async function getWeatherFromApi(city){
     return response.json();
 }
 
+// TODO status code handling
