@@ -5,7 +5,7 @@ function SearchBar({searchValue, setSearchValue, handleSearch}) {
     return (
         <>
             <Search searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch}/>
-            {/*<Autocomplete/>*/}
+            <Autocomplete/>
         </>
     );
 }
