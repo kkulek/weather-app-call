@@ -1,4 +1,4 @@
-const API_KEY = 'ca98464ba7f04c9caae191016222709';
+const API_KEY = '50ed3e63ebab4da5b7e71105222910';
 const BASE_URL = 'http://api.weatherapi.com/v1/forecast.json';
 
 
